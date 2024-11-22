@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			* {
+				font-family: "Segoe UI";
+				box-sizing: border-box;
+			}
+			
+			/*************/
+			/* Demo */
+			
+			.demo {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 3px;
+				width: 153px;
+			}
+			
+			.demo-box {
+				width: 75px;
+				height: 75px;
+				
+				background-image: linear-gradient(to right,lightblue,pink);
+				background-attachment: fixed;
+				background-size: 160px 160px;
+				box-shadow: 5px 5px 5px 2px rgba(0,0,0,0.1);
+			}
+			
+			.demo .demo-box:nth-of-type(1) {
+				border-radius: 10% 0 0 0;
+			}
+			
+			.demo .demo-box:nth-of-type(2) {
+				border-radius: 0 10% 0 0;
+			}
+			
+			.demo .demo-box:nth-of-type(3) {
+				border-radius: 0 0 0 10%;
+			}
+			
+			.demo .demo-box:nth-of-type(4) {
+				border-radius: 0 0 10% 0;
+			}
+			
+			
+			
+			
+			/*************/
+			/* Attribute selectors */
+			
+			.a-select a {
+				display: block;
+				text-decoration: none;
+				color: black;
+				width: max-content;
+			}
+			
+			.a-select a[href="https://www.google.com"] {
+				color: pink;
+			}
+			
+			.a-select a[href^="facebook"] {
+				color: violet;
+			}
+			
+			.a-select a[href$=".tv"] {
+				color: orange;
+			}
+			
+			.a-select a[href*="insta"] {
+				color: cyan;
+			}
+			
+			
+			
+			
+			/*************/
+			/* Attribute selectors */
+			
+			.a-select a {
+				display: block;
+				text-decoration: none;
+				color: black;
+				width: max-content;
+			}
+			
+			.a-select a[href="https://www.google.com"] {
+				color: pink;
+			}
+			
+			.a-select a[href^="facebook"] {
+				color: violet;
+			}
+			
+			.a-select a[href$=".tv"] {
+				color: orange;
+			}
+			
+			.a-select a[href*="insta"] {
+				color: cyan;
+			}
+			
+			
+			
+			
+			/*************/
+			/* Position selectors */
+			
+			:root {
+				background: beige;
+			}
+			
+			.p-select div:nth-child(4) {
+				color: pink;
+			}
+			
+			.p-select div:nth-last-child(4) {
+				color: pink;
+			}
+			
+			.p-select div:nth-of-type(3) {
+				color: orange;
+			}
+			
+			.p-select div:nth-last-of-type(2) {
+				color: orange;
+			}
+			
+			.p-select div:last-child {
+				color: blue;
+			}
+			
+			.p-select span:first-of-type {
+				color: cyan;
+			}
+			
+			.p-select span:last-of-type {
+				color: slategray;
+			}
+			
+			.p-select a:only-child {
+				color: yellow;
+			}
+			
+			.p-select p:only-of-type {
+				color: lightblue;
+			}
+			
+			::selection {
+				color: red;
+				background: white;
+			}
+			
+			
+			
+			
+			/*************/
+			/* Background */
+			
+			.origin-demo, .clip-demo, .size-demo {
+				display: flex;
+				flex-direction: column;
+				gap: 10px;
+			}
+			
+			.origin-demo div, .clip-demo div, .size-demo div {
+				width: 600px;
+				height: 500px;
+				background-repeat: no-repeat;
+				border: 10px dotted blue;
+			}
+			
+			.origin-demo div {
+				background-image: url('https://2.img-dpreview.com/files/p/TS1800x1200~sample_galleries/1330372094/3034099460.jpg');
+				padding: 10px;
+				background-size: cover;
+			}
+			
+			.origin-demo div:nth-child(1) {
+				background-origin: content-box;
+			}
+			
+			.origin-demo div:nth-child(2) {
+				background-origin: padding-box;
+			}
+			
+			.origin-demo div:nth-child(3) {
+				background-origin: border-box;
+			}
+			
+			.clip-demo div {
+				background-image: url('https://1.img-dpreview.com/files/p/TS1800x1200~sample_galleries/1330372094/1693761761.jpg');
+				padding: 10px;
+				background-size: cover;
+			}
+			
+			.clip-demo div:nth-child(1) {
+				background-clip: content-box;
+			}
+			
+			.clip-demo div:nth-child(2) {
+				background-clip: padding-box;
+			}
+			
+			.clip-demo div:nth-child(3) {
+				background-clip: border-box;
+			}
+			
+			.size-demo div {
+				background-image: url('https://3.img-dpreview.com/files/p/TS1800x1200~sample_galleries/1330372094/6293643549.jpg');
+			}
+			
+			.size-demo div:nth-child(1) {
+				background-size: 400px 300px;
+			}
+			
+			.size-demo div:nth-child(2) {
+				background-size: 20% 40%;
+			}
+			
+			.size-demo div:nth-child(3) {
+				background-size: cover;
+			}
+			
+			.size-demo div:nth-child(4) {
+				background-size: contain;
+			}
+			
+			
+			
+			
+			/*************/
+			/* Border */
+			
+			.b-image, .b-round {
+				display: flex;
+				flex-direction: column;
+				gap: 10px;
+			}
+			
+			.b-image div, .b-round div {
+				width: 300px;
+				height: 300px;
+			}
+			
+			.b-image div:nth-child(1) {
+				border: 10px solid transparent;
+				border-image: url('https://www.w3schools.com/css/border.png') 30 round;
+			}
+			
+			.b-image div:nth-child(2) {
+				border: 10px solid transparent;
+				border-image: url('https://www.w3schools.com/css/border.png') 10 stretch;
+			}
+			
+			.b-image div:nth-child(3) {
+				border: 10px solid transparent;
+				border-image: url('https://www.w3schools.com/css/border.png') 20 repeat;
+			}
+			
+			.b-round div {
+				background: pink;
+			}
+			
+			.b-round div:nth-child(1) {
+				border-radius: 50px;
+			}
+			
+			.b-round div:nth-child(2) {
+				border-radius: 50px 25px;
+			}
+			
+			.b-round div:nth-child(3) {
+				border-radius: 50px 25px 13px;
+			}
+			
+			.b-round div:nth-child(4) {
+				border-radius: 50px 25px 13px 7px;
+			}
+		</style>
+	</head>
+	<body>
+		<h3>Intro</h3>
+		<div class="demo">
+			<div class="demo-box"></div>
+			<div class="demo-box"></div>
+			<div class="demo-box"></div>
+			<div class="demo-box"></div>
+		</div>
+		
+		<br><br><br><br>
+		
+		<h3>Attribute Selectors</h3>
+		<div class="a-select">
+			<a href="https://www.google.com">Link 1</a>
+			<a href="facebook.com">Link 2</a>
+			<a href="https://www.twitch.tv">Link 3</a>
+			<a href="https://www.instagram.com">Link 4</a>
+		</div>
+		
+		<br><br><br><br>
+		
+		<h3>Position Selectors</h3>
+		<div class="p-select">
+			<div>Div 1</div>
+			<div>Div 2</div>
+			<div>Div 3</div>
+			<div>Div 4</div>
+			<div>Div 5</div>
+			<span>Span 1</span>
+			<div>Div 6</div>
+			<a href="#">Link 1</a>
+			<div>Div 7</div>
+			<span>Span 2</span>
+			<p>Paragraph 1</p>
+			<div>Div 8</div>
+			<div>Div 9</div>
+			<span>Span 3</span>
+			<div>Div 10</div>
+
+		</div>
+		
+		<br><br><br><br>
+		
+		<h3>Background</h3>
+		<h4>background-origin</h4>
+		<div class="origin-demo">
+			content-box
+			<div></div>
+			padding-box
+			<div></div>
+			border-box
+			<div></div>
+		</div>
+		<br><br>
+		<h4>background-clip</h4>
+		<div class="clip-demo">
+			content-box
+			<div></div>
+			padding-box
+			<div></div>
+			border-box
+			<div></div>
+		</div>
+		<br><br>
+		<h4>background-size</h4>
+		<div class="size-demo">
+			pixel sizing
+			<div></div>
+			percentage sizing
+			<div></div>
+			cover
+			<div></div>
+			contain
+			<div></div>
+		</div>
+		
+		<br><br><br><br>
+		
+		<h3>Borders</h3>
+		<h4>border-image</h4>
+		<div class="b-image">
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+		<br><br>
+		<h4>border-radius</h4>
+		<div class="b-round">
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+	</body>
+</html>
